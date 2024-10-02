@@ -23,9 +23,17 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    // https://formspree.io/f/mwpenejz
+    // try {
+    //   const response = await fetch('https://sheetdb.io/api/v1/3qkoi4e4t8m6m', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(formData),
+    //   });
     try {
-      const response = await fetch('https://formspree.io/f/mwpenejz', {
+      const response = await fetch('https://sheetdb.io/api/v1/3qkoi4e4t8m6m', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -40,9 +48,10 @@ const ContactForm = () => {
           email: '',
           number: '',
           address: '',
-          Introduction: '',
+          content: '',
           role: 'student',
         });
+        console.log(formData)
       } else {
         setFormStatus('Failed to submit the form. Please try again.');
       }
